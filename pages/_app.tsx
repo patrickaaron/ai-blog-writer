@@ -33,11 +33,7 @@ export default function App({
 }: AppPropsWithLayout) {
   const getLayout = Component.getLayout || ((page) => page);
   return (
-    <SessionProvider
-      session={session}
-      refetchInterval={2 * 60}
-      refetchOnWindowFocus={false}
-    >
+    <SessionProvider session={session}>
       <PostsProvider>
         <main
           className={`${dmSans.variable} ${dmSerifDisplay.variable} font-body`}
