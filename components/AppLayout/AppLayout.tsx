@@ -34,7 +34,7 @@ AppLayoutProps) => {
   return (
     <div className="grid grid-cols-[300px_1fr] h-screen max-h-screen">
       <div className="flex flex-col text-white overflow-hidden">
-        <div className="bg-slate-800 px-2">
+        <div className="bg-[#2C3E50] px-2">
           <Logo />
           <Link href="/post/new" className="btn">
             New Post
@@ -44,7 +44,7 @@ AppLayoutProps) => {
             <span className="pl-1">{availableTokens} tokens available</span>
           </Link>
         </div>
-        <div className="px-4 flex-1 overflow-auto bg-gradient-to-b from-slate-800 to-cyan-800">
+        <div className="px-4 flex-1 overflow-auto bg-gradient-to-b from-[#2C3E50] to-black">
           {posts.map((post) => (
             <Link
               key={post._id}
@@ -57,7 +57,7 @@ AppLayoutProps) => {
             </Link>
           ))}
         </div>
-        <div className="bg-cyan-800 flex items-center gap-2 border-t border-t-black/50 h-20 px-2">
+        <div className="bg-black flex items-center gap-2 border-t border-t-black/10 h-20 px-2">
           {!!session && (
             <>
               <div className="min-w-[50px]">

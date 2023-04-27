@@ -61,7 +61,7 @@ export default function Post(props: PostProps) {
         </div>
         <div className="flex flex-wrap pt-2 gap-1">
           {props.keywords.split(",").map((keyword, i) => (
-            <div key={i} className="p-2 rounded-full bg-slate-800 text-white">
+            <div key={i} className="p-2 rounded-full bg-[#2C3E50] text-white">
               <FontAwesomeIcon icon={faHashtag} /> {keyword}
             </div>
           ))}
