@@ -27,22 +27,10 @@ type Action =
 function postsReducer(state: PostState, action: Action) {
   switch (action.type) {
     case "addPosts": {
-      const newPosts = [...state];
-      action.posts.forEach((post) => {
-        const exists = newPosts.find((p) => p._id === post._id);
-        if (!exists) {
-          newPosts.push(post);
-        }
-      });
-      return newPosts;
+      return [...action.posts];
     }
     case "deletePost": {
-      const newPosts: PostType[] = [];
-      state.forEach((post) => {
-        if (post._id !== action.postId) {
-          newPosts.push(post);
-        }
-      });
+      const newPosts = state.filter((post) => post._id !== action.postId);
       return newPosts;
     }
     default:
