@@ -14,7 +14,7 @@ type AppLayoutProps = {
   availableTokens: number;
   posts: PostType[];
   postId: string;
-  postCreated: string;
+  // postCreated: string;
 };
 
 export const AppLayout = ({
@@ -22,14 +22,14 @@ export const AppLayout = ({
   availableTokens,
   posts: postsFromSSR,
   postId,
-  postCreated,
-}: AppLayoutProps) => {
+}: // postCreated,
+AppLayoutProps) => {
   const { data: session } = useSession();
   const { setPostsFromSSR, posts } = usePostsContext();
 
   useEffect(() => {
     setPostsFromSSR(postsFromSSR);
-  }, []);
+  }, [availableTokens]);
 
   return (
     <div className="grid grid-cols-[300px_1fr] h-screen max-h-screen">
